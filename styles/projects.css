@@ -25,7 +25,8 @@
 .project-window-lights { display: flex; gap: 5px; }
 .project-window-lights i { width: 6px; height: 6px; border-radius: 50%; background: #75806f; }
 .project-window-lights i:first-child { background: #d7ff45; }
-.project-window-arrow { justify-self: end; font-size: 14px; }
+.project-window-arrow { display: grid; width: 15px; height: 15px; justify-self: end; place-items: center; }
+.project-window-arrow svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
 .project-live-preview { position: relative; height: calc(100% - 38px); overflow: hidden; background: #d9dfd4; }
 .project-live-preview iframe { position: absolute; top: 0; left: 0; width: 250%; height: 250%; border: 0; transform: scale(.4); transform-origin: top left; pointer-events: none; }
 .project-preview-title { position: absolute; right: 12px; bottom: 12px; padding: 7px 10px; color: #f5f5f2; background: rgba(15,20,16,.82); font: 700 9px/1 Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
@@ -33,7 +34,8 @@
 .project-category { color: #aeb6aa; font: 700 9px/1.2 monospace; letter-spacing: .16em; }
 .project-details h3 { margin: 11px 0 6px; font-size: clamp(24px, 3vw, 38px); line-height: 1; letter-spacing: -.04em; }
 .project-details p { margin: 0; color: #b6beb3; font-size: 14px; line-height: 1.5; }
-.project-open { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 1px solid rgba(234,241,222,.38); border-radius: 50%; color: var(--accent); font-size: 19px; transition: color .2s, background .2s, border-color .2s; }
+.project-open { display: grid; width: 42px; height: 42px; flex: 0 0 auto; place-items: center; border: 1px solid rgba(234,241,222,.38); border-radius: 50%; color: var(--accent); transition: color .2s, background .2s, border-color .2s; }
+.project-open svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.65; }
 .project-card:hover .project-open { color: #101310; background: var(--accent); border-color: var(--accent); }
 @keyframes project-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @media (max-width: 760px) {

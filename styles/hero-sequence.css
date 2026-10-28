@@ -46,7 +46,7 @@
 .counter { position: absolute; z-index: 2; right: 36px; bottom: 32px; color: rgba(255,255,255,.75); font: 700 11px/1 monospace; letter-spacing: .1em; }
 @keyframes scan { from { transform: translateX(-110%); } to { transform: translateX(300%); } }
 @media (max-width: 700px) {
-  .topbar { padding: 22px 20px; align-items: flex-start; gap: 16px; }
+  .topbar { flex-direction: row-reverse; padding: 22px 20px; align-items: flex-start; gap: 16px; }
   .brand { width: clamp(150px, 42vw, 220px); }
   .status { max-width: 130px; line-height: 1.5; padding-top: 8px; font-size: 8px; }
   .status i { flex-shrink: 0; }

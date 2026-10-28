@@ -27,7 +27,9 @@ export default function ProjectsSection() {
                 <div className="project-window-bar" aria-hidden="true">
                   <span className="project-window-lights"><i /><i /><i /></span>
                   <span>0{index + 1} / PORTFOLIO</span>
-                  <span className="project-window-arrow">↗</span>
+                  <span className="project-window-arrow">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+                  </span>
                 </div>
                 <div className="project-live-preview">
                   <iframe
@@ -47,7 +49,9 @@ export default function ProjectsSection() {
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
                 </div>
-                <span className="project-open" aria-hidden="true">↗</span>
+                <span className="project-open" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg>
+                </span>
               </div>
             </a>
           ))}
