@@ -1,0 +1,59 @@
+.sequence { position: relative; height: 500vh; background: var(--black); }
+.sticky-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; isolation: isolate; }
+.sticky-stage canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; background: #19130c; }
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.22) 48%, rgba(0,0,0,.08) 72%),
+    linear-gradient(180deg, rgba(0,0,0,.45) 0%, transparent 28%, transparent 70%, rgba(0,0,0,.5) 100%);
+  pointer-events: none;
+}
+.topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 36px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.brand { display: block; flex: 0 0 auto; width: clamp(180px, 20vw, 280px); }
+.brand-logo { display: block; width: 100%; height: auto; }
+.brand:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
+.status { display: flex; align-items: center; gap: 9px; }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px var(--accent); }
+.scroll-hint {
+  position: absolute;
+  z-index: 2;
+  left: clamp(24px, 6vw, 96px);
+  bottom: 34px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.scroll-line { position: relative; width: 74px; height: 1px; background: rgba(255,255,255,.35); overflow: hidden; }
+.scroll-line b { position: absolute; width: 35%; height: 100%; background: var(--accent); animation: scan 1.5s ease-in-out infinite; }
+.counter { position: absolute; z-index: 2; right: 36px; bottom: 32px; color: rgba(255,255,255,.75); font: 700 11px/1 monospace; letter-spacing: .1em; }
+@keyframes scan { from { transform: translateX(-110%); } to { transform: translateX(300%); } }
+@media (max-width: 700px) {
+  .topbar { padding: 22px 20px; align-items: flex-start; gap: 16px; }
+  .brand { width: clamp(150px, 42vw, 220px); }
+  .status { max-width: 130px; line-height: 1.5; padding-top: 8px; font-size: 8px; }
+  .status i { flex-shrink: 0; }
+  .scroll-hint { left: 20px; bottom: 24px; }
+  .counter { right: 20px; bottom: 24px; }
+  .shade { background: linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.12)), linear-gradient(180deg, rgba(0,0,0,.4), transparent 55%, rgba(0,0,0,.55)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-line b { animation: none; width: 100%; }
+}

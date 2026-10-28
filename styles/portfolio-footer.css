@@ -1,0 +1,93 @@
+.portfolio-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(56px, 8vw, 112px) clamp(24px, 6vw, 96px);
+  overflow: hidden;
+  background: #0a0d0b;
+}
+
+.portfolio-footer-cta {
+  max-width: 720px;
+  margin: 0 0 clamp(38px, 5vw, 66px);
+  color: #f5f1e8;
+  font: 900 clamp(32px, 5vw, 66px)/.93 Arial, sans-serif;
+  letter-spacing: -.07em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.portfolio-footer-cta span { color: var(--accent); }
+
+.portfolio-footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(76px, 120px));
+  gap: clamp(12px, 2vw, 28px);
+  width: min(100%, 590px);
+}
+
+.footer-contact-link {
+  position: relative;
+  display: grid;
+  aspect-ratio: 1;
+  place-items: center;
+  color: #f5f1e8;
+  background: #0d0d0d;
+  border: clamp(2px, .35vw, 4px) solid currentColor;
+  border-radius: clamp(9px, 1.3vw, 17px);
+  box-shadow: 4px 4px 0 rgba(215, 255, 69, .24), -2px -2px 0 rgba(255, 52, 52, .32);
+  transform: rotate(-2deg);
+  transition: color .18s ease, background-color .18s ease, transform .18s ease;
+}
+
+.footer-contact-link::after {
+  position: absolute;
+  right: 9%;
+  bottom: -13%;
+  width: 7%;
+  height: 18%;
+  content: "";
+  background: var(--accent);
+  border-radius: 50% 50% 80% 20%;
+  opacity: 0;
+  transform: rotate(19deg);
+  transition: opacity .18s ease;
+}
+
+.footer-contact-link:nth-child(even) { transform: rotate(2deg); }
+
+.footer-contact-link svg {
+  width: 58%;
+  height: 58%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.85;
+}
+
+.footer-contact-link .instagram-graffiti-dot { fill: currentColor; stroke: none; }
+.contact-github svg { fill: currentColor; stroke: none; }
+
+.footer-contact-link:hover {
+  color: var(--accent);
+  background: #141711;
+  transform: translateY(-7px) rotate(0) scale(1.05);
+}
+
+.footer-contact-link:hover::after { opacity: 1; }
+.footer-contact-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 8px; }
+
+@media (max-width: 520px) {
+  .portfolio-footer-cta { font-size: clamp(32px, 10vw, 48px); }
+  .portfolio-footer-links {
+    grid-template-columns: repeat(4, minmax(56px, 1fr));
+    gap: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-contact-link,
+  .footer-contact-link::after { transition: none; }
+}
